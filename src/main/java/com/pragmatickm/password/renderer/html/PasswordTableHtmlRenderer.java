@@ -59,7 +59,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-final public class PasswordTableHtmlRenderer {
+public final class PasswordTableHtmlRenderer {
 
 	public static void writePasswordTable(
 		ServletContext servletContext,

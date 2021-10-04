@@ -29,7 +29,7 @@ import com.semanticcms.core.renderer.html.HtmlRenderer;
 import com.semanticcms.core.renderer.html.PageIndex;
 import java.io.IOException;
 
-final public class PasswordHtmlRenderer {
+public final class PasswordHtmlRenderer {
 
 	public static void writePassword(
 		HtmlRenderer htmlRenderer,
