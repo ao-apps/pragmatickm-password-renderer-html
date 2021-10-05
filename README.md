@@ -1,4 +1,4 @@
-# [<img src="ao-logo.png" alt="AO Logo" width="35" height="40">](https://github.com/aoindustries) [PragmaticKM](https://github.com/aoindustries/pragmatickm) / [Password](https://github.com/aoindustries/pragmatickm-password) / [Renderer HTML](https://github.com/aoindustries/pragmatickm-password-renderer-html)
+# [<img src="ao-logo.png" alt="AO Logo" width="35" height="40">](https://github.com/ao-apps) [PragmaticKM](https://github.com/ao-apps/pragmatickm) / [Password](https://github.com/ao-apps/pragmatickm-password) / [Renderer HTML](https://github.com/ao-apps/pragmatickm-password-renderer-html)
 
 [![project: alpha](https://pragmatickm.com/ao-badges/project-alpha.svg)](https://aoindustries.com/life-cycle#project-alpha)
 [![management: preview](https://pragmatickm.com/ao-badges/management-preview.svg)](https://aoindustries.com/life-cycle#management-preview)
@@ -8,7 +8,7 @@
 [![semantic versioning: 2.0.0](https://pragmatickm.com/ao-badges/semver-2.0.0.svg)](http://semver.org/spec/v2.0.0.html)
 [![license: LGPL v3](https://pragmatickm.com/ao-badges/license-lgpl-3.0.svg)](https://www.gnu.org/licenses/lgpl-3.0)
 
-[![Build](https://github.com/aoindustries/pragmatickm-password-renderer-html/workflows/Build/badge.svg?branch=master)](https://github.com/aoindustries/pragmatickm-password-renderer-html/actions?query=workflow%3ABuild)
+[![Build](https://github.com/ao-apps/pragmatickm-password-renderer-html/workflows/Build/badge.svg?branch=master)](https://github.com/ao-apps/pragmatickm-password-renderer-html/actions?query=workflow%3ABuild)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.pragmatickm/pragmatickm-password-renderer-html/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.pragmatickm/pragmatickm-password-renderer-html)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?branch=master&project=com.pragmatickm%3Apragmatickm-password-renderer-html&metric=alert_status)](https://sonarcloud.io/dashboard?branch=master&id=com.pragmatickm%3Apragmatickm-password-renderer-html)
 [![Lines of Code](https://sonarcloud.io/api/project_badges/measure?branch=master&project=com.pragmatickm%3Apragmatickm-password-renderer-html&metric=ncloc)](https://sonarcloud.io/component_measures?branch=master&id=com.pragmatickm%3Apragmatickm-password-renderer-html&metric=ncloc)  
@@ -17,14 +17,14 @@
 [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?branch=master&project=com.pragmatickm%3Apragmatickm-password-renderer-html&metric=sqale_rating)](https://sonarcloud.io/component_measures?branch=master&id=com.pragmatickm%3Apragmatickm-password-renderer-html&metric=Maintainability)
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?branch=master&project=com.pragmatickm%3Apragmatickm-password-renderer-html&metric=coverage)](https://sonarcloud.io/component_measures?branch=master&id=com.pragmatickm%3Apragmatickm-password-renderer-html&metric=Coverage)
 
-[Passwords](https://github.com/aoindustries/pragmatickm-password) rendered as HTML in a Servlet environment.
+[Passwords](https://github.com/ao-apps/pragmatickm-password) rendered as HTML in a Servlet environment.
 
 ## Project Links
 * [Project Home](https://pragmatickm.com/password/renderer/html/)
 * [Changelog](https://pragmatickm.com/password/renderer/html/changelog)
 * [API Docs](https://pragmatickm.com/password/renderer/html/apidocs/)
 * [Maven Central Repository](https://search.maven.org/artifact/com.pragmatickm/pragmatickm-password-renderer-html)
-* [GitHub](https://github.com/aoindustries/pragmatickm-password-renderer-html)
+* [GitHub](https://github.com/ao-apps/pragmatickm-password-renderer-html)
 
 ## Contact Us
 For questions or support, please [contact us](https://aoindustries.com/contact):
