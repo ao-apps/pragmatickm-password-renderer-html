@@ -59,7 +59,10 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public final class PasswordTableHtmlRenderer {
+public abstract class PasswordTableHtmlRenderer {
+
+	/** Make no instances. */
+	private PasswordTableHtmlRenderer() {throw new AssertionError();}
 
 	public static void writePasswordTable(
 		ServletContext servletContext,
@@ -340,11 +343,5 @@ public final class PasswordTableHtmlRenderer {
 				}
 			}
 		}
-	}
-
-	/**
-	 * Make no instances.
-	 */
-	private PasswordTableHtmlRenderer() {
 	}
 }

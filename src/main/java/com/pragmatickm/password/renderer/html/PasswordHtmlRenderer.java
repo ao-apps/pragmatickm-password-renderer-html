@@ -29,7 +29,10 @@ import com.semanticcms.core.renderer.html.HtmlRenderer;
 import com.semanticcms.core.renderer.html.PageIndex;
 import java.io.IOException;
 
-public final class PasswordHtmlRenderer {
+public abstract class PasswordHtmlRenderer {
+
+	/** Make no instances. */
+	private PasswordHtmlRenderer() {throw new AssertionError();}
 
 	public static void writePassword(
 		HtmlRenderer htmlRenderer,
@@ -48,11 +51,5 @@ public final class PasswordHtmlRenderer {
 			))
 			.clazz(htmlRenderer.getLinkCssClass(password))
 		.__(password.getPassword());
-	}
-
-	/**
-	 * Make no instances.
-	 */
-	private PasswordHtmlRenderer() {
 	}
 }
