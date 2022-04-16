@@ -20,6 +20,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with pragmatickm-password-renderer-html.  If not, see <https://www.gnu.org/licenses/>.
  */
+
 package com.pragmatickm.password.renderer.html;
 
 import com.aoapps.html.any.AnyUnion_Palpable_Phrasing;
