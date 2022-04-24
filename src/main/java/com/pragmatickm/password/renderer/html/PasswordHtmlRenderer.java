@@ -38,21 +38,21 @@ public final class PasswordHtmlRenderer {
   }
 
   public static void writePassword(
-    HtmlRenderer htmlRenderer,
-    PageIndex pageIndex,
-    AnyUnion_Palpable_Phrasing<?, ?> content,
-    ElementContext context,
-    Password password
+      HtmlRenderer htmlRenderer,
+      PageIndex pageIndex,
+      AnyUnion_Palpable_Phrasing<?, ?> content,
+      ElementContext context,
+      Password password
   ) throws IOException {
     String id = password.getId();
     content.span()
-      .id((id == null) ? null : idAttr -> PageIndex.appendIdInPage(
-        pageIndex,
-        password.getPage(),
-        id,
-        idAttr
-      ))
-      .clazz(htmlRenderer.getLinkCssClass(password))
-    .__(password.getPassword());
+        .id((id == null) ? null : idAttr -> PageIndex.appendIdInPage(
+            pageIndex,
+            password.getPage(),
+            id,
+            idAttr
+        ))
+        .clazz(htmlRenderer.getLinkCssClass(password))
+        .__(password.getPassword());
   }
 }

@@ -69,13 +69,13 @@ public final class PasswordTableHtmlRenderer {
   }
 
   public static void writePasswordTable(
-    ServletContext servletContext,
-    HttpServletRequest request,
-    HttpServletResponse response,
-    AnyPalpableContent<?, ?> content,
-    PasswordTable passwordTable,
-    Iterable<? extends Password> passwords,
-    Object style
+      ServletContext servletContext,
+      HttpServletRequest request,
+      HttpServletResponse response,
+      AnyPalpableContent<?, ?> content,
+      PasswordTable passwordTable,
+      Iterable<? extends Password> passwords,
+      Object style
   ) throws IOException, ServletException {
     SemanticCMS semanticCMS = SemanticCMS.getInstance(servletContext);
     HtmlRenderer htmlRenderer = HtmlRenderer.getInstance(servletContext);
@@ -89,7 +89,7 @@ public final class PasswordTableHtmlRenderer {
     }
     for (Element childElement : passwordTable.getChildElements()) {
       if (childElement instanceof Password) {
-        allPasswords.add((Password)childElement);
+        allPasswords.add((Password) childElement);
       }
     }
 
@@ -125,23 +125,23 @@ public final class PasswordTableHtmlRenderer {
     String id = passwordTable.getId();
     try (
       AnyTABLE_c<?, ?, ?> table = content.table()
-        .id((id == null) ? null : idAttr -> PageIndex.appendIdInPage(
-          pageIndex,
-          passwordTable.getPage(),
-          id,
-          idAttr
-        ))
-        .clazz("ao-grid", "pragmatickm-password")
-        .style(style)
-      ._c()
-    ) {
+            .id((id == null) ? null : idAttr -> PageIndex.appendIdInPage(
+                pageIndex,
+                passwordTable.getPage(),
+                id,
+                idAttr
+            ))
+            .clazz("ao-grid", "pragmatickm-password")
+            .style(style)
+            ._c()
+        ) {
       try (AnyTHEAD_c<?, ?, ?> thead = table.thead_c()) {
         assert colCount >= 1;
         final String header = passwordTable.getHeader();
         if (header != null) {
           try (AnyTR_c<?, ?, ?> tr = thead.tr_c()) {
             tr.th().clazz("pragmatickm-password-header").colspan(colCount).__(th -> th
-              .div__(header)
+                    .div__(header)
             );
           }
         }
@@ -159,7 +159,7 @@ public final class PasswordTableHtmlRenderer {
             tr.th__("Password");
             if (hasSecretQuestion) {
               tr.th__("Secret Question")
-              .th__("Secret Answer");
+                  .th__("Secret Answer");
             }
           }
         }
@@ -177,7 +177,7 @@ public final class PasswordTableHtmlRenderer {
             try (AnyTR_c<?, ?, ?> tr = tbody.tr_c()) {
               if (row == 0) {
                 if (hasHref) {
-                  if (hrefRowsLeft>0) {
+                  if (hrefRowsLeft > 0) {
                     // Skip row and decrement counter
                     hrefRowsLeft--;
                   } else {
@@ -208,8 +208,8 @@ public final class PasswordTableHtmlRenderer {
                   if (rowsLeft != null) {
                     // Skip row and decrement counter
                     customValueRowsLeft.put(
-                      customField,
-                      rowsLeft == 1 ? null : (rowsLeft - 1)
+                        customField,
+                        rowsLeft == 1 ? null : (rowsLeft - 1)
                     );
                   } else {
                     // Look ahead for the total number of custom values to group
@@ -226,8 +226,8 @@ public final class PasswordTableHtmlRenderer {
                     }
                     if (newRowsLeft > 0) {
                       customValueRowsLeft.put(
-                        customField,
-                        newRowsLeft
+                          customField,
+                          newRowsLeft
                       );
                     }
                     int totalRowSpan = rowSpan + newRowsLeft;
@@ -241,15 +241,15 @@ public final class PasswordTableHtmlRenderer {
                           // Get the target page even when value is also provided to validate correct page linking
                           final BookRef bookRef = pageRef.getBookRef();
                           Page targetPage =
-                            semanticCMS.getBook(bookRef).isAccessible()
-                            ? CapturePage.capturePage(
-                              servletContext,
-                              request,
-                              response,
-                              pageRef,
-                              element == null ? CaptureLevel.PAGE : CaptureLevel.META
-                            )
-                            : null
+                              semanticCMS.getBook(bookRef).isAccessible()
+                                  ? CapturePage.capturePage(
+                                  servletContext,
+                                  request,
+                                  response,
+                                  pageRef,
+                                  element == null ? CaptureLevel.PAGE : CaptureLevel.META
+                              )
+                                  : null
                           ;
                           // Find the element
                           Element targetElement;
@@ -272,11 +272,11 @@ public final class PasswordTableHtmlRenderer {
                             if (index != null) {
                               href.append('#');
                               URIEncoder.encodeURIComponent(
-                                PageIndex.getRefId(
-                                  index,
-                                  null
-                                ),
-                                href
+                                  PageIndex.getRefId(
+                                      index,
+                                      null
+                                  ),
+                                  href
                               );
                             } else {
                               URIEncoder.encodeURI(request.getContextPath(), href);
@@ -287,11 +287,11 @@ public final class PasswordTableHtmlRenderer {
                             if (index != null) {
                               href.append('#');
                               URIEncoder.encodeURIComponent(
-                                PageIndex.getRefId(
-                                  index,
-                                  element
-                                ),
-                                href
+                                  PageIndex.getRefId(
+                                      index,
+                                      element
+                                  ),
+                                  href
                               );
                             } else {
                               URIEncoder.encodeURI(request.getContextPath(), href);
@@ -302,26 +302,26 @@ public final class PasswordTableHtmlRenderer {
                             }
                           }
                           td
-                            .a(response.encodeURL(href.toString()))
-                            .clazz(targetElement == null ? null : htmlRenderer.getLinkCssClass(targetElement))
-                          .__(a -> {
-                            if (value.getValue() != null) {
-                              a.text(value.getValue());
-                            } else {
-                              if (targetElement != null) {
-                                a.text(targetElement);
-                              } else if (targetPage != null) {
-                                a.text(targetPage.getTitle());
-                              } else {
-                                a.text(text -> LinkRenderer.writeBrokenPath(pageRef, text));
-                              }
-                            }
-                            if (index != null) {
-                              a.sup__any(sup -> sup
-                                .text('[').text(index + 1).text(']')
-                              );
-                            }
-                          });
+                              .a(response.encodeURL(href.toString()))
+                              .clazz(targetElement == null ? null : htmlRenderer.getLinkCssClass(targetElement))
+                              .__(a -> {
+                                if (value.getValue() != null) {
+                                  a.text(value.getValue());
+                                } else {
+                                  if (targetElement != null) {
+                                    a.text(targetElement);
+                                  } else if (targetPage != null) {
+                                    a.text(targetPage.getTitle());
+                                  } else {
+                                    a.text(text -> LinkRenderer.writeBrokenPath(pageRef, text));
+                                  }
+                                }
+                                if (index != null) {
+                                  a.sup__any(sup -> sup
+                                          .text('[').text(index + 1).text(']')
+                                  );
+                                }
+                              });
                         } else {
                           td.text(value.getValue());
                         }
@@ -335,21 +335,21 @@ public final class PasswordTableHtmlRenderer {
                 }
                 String pid = password.getId();
                 tr.td().rowspan(rowSpan).__(td -> td
-                  .span()
-                    .id((pid == null) ? null : idAttr -> PageIndex.appendIdInPage(
-                      pageIndex,
-                      passwordTable.getPage(),
-                      pid,
-                      idAttr
-                    ))
-                    .clazz(htmlRenderer.getLinkCssClass(password))
-                  .__(password.getPassword())
+                        .span()
+                        .id((pid == null) ? null : idAttr -> PageIndex.appendIdInPage(
+                            pageIndex,
+                            passwordTable.getPage(),
+                            pid,
+                            idAttr
+                        ))
+                        .clazz(htmlRenderer.getLinkCssClass(password))
+                        .__(password.getPassword())
                 );
               }
               if (hasSecretQuestion) {
                 Map.Entry<String, String> entry = securityQuestionIter.hasNext() ? securityQuestionIter.next() : null;
                 tr.td__(entry == null ? null : entry.getKey())
-                .td__(entry == null ? null : entry.getValue());
+                    .td__(entry == null ? null : entry.getValue());
               }
             }
           }
