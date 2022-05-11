@@ -77,7 +77,7 @@ public final class PasswordTableHtmlRenderer {
       Iterable<? extends Password> passwords,
       Object style
   ) throws IOException, ServletException {
-    SemanticCMS semanticCMS = SemanticCMS.getInstance(servletContext);
+    SemanticCMS semanticCms = SemanticCMS.getInstance(servletContext);
     HtmlRenderer htmlRenderer = HtmlRenderer.getInstance(servletContext);
     PageIndex pageIndex = PageIndex.getCurrentPageIndex(request);
     // Combine passwords from both attribute and body
@@ -124,7 +124,7 @@ public final class PasswordTableHtmlRenderer {
     // Print the table
     String id = passwordTable.getId();
     try (
-      AnyTABLE_c<?, ?, ?> table = content.table()
+        AnyTABLE_c<?, ?, ?> table = content.table()
             .id((id == null) ? null : idAttr -> PageIndex.appendIdInPage(
                 pageIndex,
                 passwordTable.getPage(),
@@ -141,7 +141,7 @@ public final class PasswordTableHtmlRenderer {
         if (header != null) {
           try (AnyTR_c<?, ?, ?> tr = thead.tr_c()) {
             tr.th().clazz("pragmatickm-password-header").colspan(colCount).__(th -> th
-                    .div__(header)
+                .div__(header)
             );
           }
         }
@@ -241,7 +241,7 @@ public final class PasswordTableHtmlRenderer {
                           // Get the target page even when value is also provided to validate correct page linking
                           final BookRef bookRef = pageRef.getBookRef();
                           Page targetPage =
-                              semanticCMS.getBook(bookRef).isAccessible()
+                              semanticCms.getBook(bookRef).isAccessible()
                                   ? CapturePage.capturePage(
                                   servletContext,
                                   request,
@@ -249,8 +249,7 @@ public final class PasswordTableHtmlRenderer {
                                   pageRef,
                                   element == null ? CaptureLevel.PAGE : CaptureLevel.META
                               )
-                                  : null
-                          ;
+                                  : null;
                           // Find the element
                           Element targetElement;
                           if (element != null && targetPage != null) {
@@ -318,7 +317,7 @@ public final class PasswordTableHtmlRenderer {
                                 }
                                 if (index != null) {
                                   a.sup__any(sup -> sup
-                                          .text('[').text(index + 1).text(']')
+                                      .text('[').text(index + 1).text(']')
                                   );
                                 }
                               });
@@ -335,15 +334,15 @@ public final class PasswordTableHtmlRenderer {
                 }
                 String pid = password.getId();
                 tr.td().rowspan(rowSpan).__(td -> td
-                        .span()
-                        .id((pid == null) ? null : idAttr -> PageIndex.appendIdInPage(
-                            pageIndex,
-                            passwordTable.getPage(),
-                            pid,
-                            idAttr
-                        ))
-                        .clazz(htmlRenderer.getLinkCssClass(password))
-                        .__(password.getPassword())
+                    .span()
+                    .id((pid == null) ? null : idAttr -> PageIndex.appendIdInPage(
+                        pageIndex,
+                        passwordTable.getPage(),
+                        pid,
+                        idAttr
+                    ))
+                    .clazz(htmlRenderer.getLinkCssClass(password))
+                    .__(password.getPassword())
                 );
               }
               if (hasSecretQuestion) {
