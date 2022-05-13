@@ -39,4 +39,4 @@ module com.pragmatickm.password.renderer.html {
   requires com.semanticcms.core.servlet; // <groupId>com.semanticcms</groupId><artifactId>semanticcms-core-servlet</artifactId>
   // Transitive
   requires com.semanticcms.core.renderer; // <groupId>com.semanticcms</groupId><artifactId>semanticcms-core-renderer</artifactId>
-} // TODO: Avoiding rewrite-maven-plugin-4.22.2 truncation
+}
