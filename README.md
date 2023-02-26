@@ -23,7 +23,7 @@
 * [Project Home](https://pragmatickm.com/password/renderer/html/)
 * [Changelog](https://pragmatickm.com/password/renderer/html/changelog)
 * [API Docs](https://pragmatickm.com/password/renderer/html/apidocs/)
-* [Maven Central Repository](https://search.maven.org/artifact/com.pragmatickm/pragmatickm-password-renderer-html)
+* [Maven Central Repository](https://central.sonatype.com/search?namespace=com.pragmatickm&q=a%3Apragmatickm-password-renderer-html)
 * [GitHub](https://github.com/ao-apps/pragmatickm-password-renderer-html)
 
 ## Contact Us
