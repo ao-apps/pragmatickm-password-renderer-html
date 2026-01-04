@@ -1,7 +1,7 @@
 #!/usr/bin/env groovy
 /*
  * pragmatickm-password-renderer-html - Passwords rendered as HTML in a Servlet environment.
- * Copyright (C) 2021, 2022, 2023, 2024, 2025  AO Industries, Inc.
+ * Copyright (C) 2021, 2022, 2023, 2024, 2025, 2026  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -34,7 +34,7 @@ def upstreamProjects = [
   '../../oss/lang', // <groupId>com.aoapps</groupId><artifactId>ao-lang</artifactId>
   '../../oss/net-types', // <groupId>com.aoapps</groupId><artifactId>ao-net-types</artifactId>
   '../../oss/servlet-util', // <groupId>com.aoapps</groupId><artifactId>ao-servlet-util</artifactId>
-  // No Jenkins: <groupId>javax.servlet</groupId><artifactId>javax.servlet-api</artifactId>
+  // No Jenkins: <groupId>jakarta.servlet</groupId><artifactId>jakarta.servlet-api</artifactId>
   'model', // <groupId>com.pragmatickm</groupId><artifactId>pragmatickm-password-model</artifactId>
   '../../semanticcms/core/controller', // <groupId>com.semanticcms</groupId><artifactId>semanticcms-core-controller</artifactId>
   '../../semanticcms/core/model', // <groupId>com.semanticcms</groupId><artifactId>semanticcms-core-model</artifactId>
@@ -46,7 +46,7 @@ def upstreamProjects = [
   '../../oss/style', // <groupId>com.aoapps</groupId><artifactId>ao-style</artifactId>
 
   // BOM
-  '../../oss/javaee-web-api-bom', // <groupId>com.aoapps</groupId><artifactId>javaee-web-api-bom</artifactId>
+  '../../oss/jakartaee-web-profile-bom', // <groupId>com.aoapps</groupId><artifactId>jakartaee-web-profile-bom</artifactId>
 ]
 
 // Java 17
